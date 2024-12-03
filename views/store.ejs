@@ -1,170 +1,129 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Generics | Store</title>
-    <meta name="description" content="This is the description" />
+    <meta name="description" content="This is the description">
     <link rel="stylesheet" href="styles.css" />
-    
-    <script src="store.js" async></script>
-  </head>
-  <body>
+</head>
+<body>
     <header class="main-header">
-      <nav class="main-nav nav">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="store.html">STORE</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-        </ul>
-      </nav>
-      <h1 class="band-name band-name-large">The Generics</h1>
+        <nav class="main-nav nav">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="store">STORE</a></li>
+                <li><a href="about.ejs">ABOUT</a></li>
+            </ul>
+        </nav>
+        <h1 class="band-name band-name-large">The Generics</h1>
     </header>
+
+    <!-- Music Section -->
     <section class="container content-section">
-      <h2 class="section-header">MUSIC</h2>
-      <div class="shop-items">
-        <% items.music.forEach(function(item){ %>
-        <div class="shop-item" date-item-id="<%= item.id %>">
-          <span class="shop-item-title"><%= item.name %></span>
-          <img class="shop-item-image" src="Images/<%= item.imgName %>" />
-          <div class="shop-item-details">
-            <span class="shop-item-price"><%= item.price/100 %></span>
-            <button class="btn btn-primary shop-item-button" type="button">
-              ADD TO CART
-            </button>
-          </div>
-        </div>
-        <% }) %>
-      </div>
-    </section>
-    <section class="container content-section">
-      <h2 class="section-header">MERCH</h2>
-      <div class="shop-items">
-        <% items.merch.forEach(function(item){ %>
-            <div class="shop-item" date-item-id="<%= item.id %>">
-              <span class="shop-item-title"><%= item.name %></span>
-              <img class="shop-item-image" src="Images/<%= item.imgName %>" />
-              <div class="shop-item-details">
-                <span class="shop-item-price"><%= item.price/100 %></span>
-                <button class="btn btn-primary shop-item-button" type="button">
-                  ADD TO CART
-                </button>
-              </div>
+        <h2 class="section-header">MUSIC</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">Album 1</span>
+                <img class="shop-item-image" src="Images/Album 1.png" alt="Album 1">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$12.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
             </div>
-            <% }) %>
-      </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Album 2</span>
+                <img class="shop-item-image" src="Images/Album 2.png" alt="Album 2">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$14.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Album 3</span>
+                <img class="shop-item-image" src="Images/Album 3.png" alt="Album 3">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$9.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Album 4</span>
+                <img class="shop-item-image" src="Images/Album 4.png" alt="Album 4">
+                <div class="shop-item-details">
+                    <span class="shop-item-price">$19.99</span>
+                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Cart Section -->
     <section class="container content-section">
-      <h2 class="section-header">CART</h2>
-      <div class="cart-row">
-        <span class="cart-item cart-header cart-column">ITEM</span>
-        <span class="cart-price cart-header cart-column">PRICE</span>
-        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-      </div>
-      <div class="cart-items"></div>
-      <div class="cart-total">
-        <strong class="cart-total-title">Total</strong>
-<span class="cart-total-price">$0</span>
-</div>
-<button class="btn btn-primary btn-purchase" type="button">
-    PURCHASE
-</button>
-</section>
-<footer class="main-footer">
-    <div class="container main-footer-container">
-        <h3 class="band-name">The Generics</h3>
-        <ul class="nav footer-nav">
-            <li>
-                <a href="https://www.youtube.com" target="_blank">
-                    <img src="Images/YouTube Logo.png" />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.spotify.com" target="_blank">
-                    <img src="Images/Spotify Logo.png" />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="Images/Facebook Logo.png" />
-                </a>
-            </li>
-        </ul>
-    </div>
-</footer>
-<script src="https://www.paypal.com/sdk/js?client-id=<%= PaypalClientId %>"></script>
-<script>
-    const cart = [];
+        <h2 class="section-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <!-- The Purchase Button that will trigger PayPal checkout -->
+        <button class="btn btn-primary btn-purchase" type="button" onclick="proceedToCheckout()">PURCHASE</button>
+    </section>
 
-    document.querySelectorAll('.shop-item-button').forEach(button => {
-        button.addEventListener('click', (event) => {
-            const shopItem = event.target.closest('.shop-item');
-            const itemId = shopItem.getAttribute('data-item-id');
-            const itemName = shopItem.querySelector('.shop-item-title').innerText;
-            const itemPrice = parseFloat(shopItem.querySelector('.shop-item-price').innerText) * 100; // Convert to cents
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h3 class="band-name">The Generics</h3>
+            <ul class="nav footer-nav">
+                <li><a href="https://www.youtube.com" target="_blank"><img src="Images/YouTube Logo.png" alt="YouTube"></a></li>
+                <li><a href="https://www.spotify.com" target="_blank"><img src="Images/Spotify Logo.png" alt="Spotify"></a></li>
+                <li><a href="https://www.facebook.com" target="_blank"><img src="Images/Facebook Logo.png" alt="Facebook"></a></li>
+            </ul>
+        </div>
+    </footer>
 
-            const item = {
-                id: itemId,
-                name: itemName,
-                price: itemPrice
-            };
+    <!-- Inline script for checkout -->
+    <script>
+        async function proceedToCheckout() {
+            var cartItems = [];
+            var cartRows = document.getElementsByClassName('cart-row');
+            for (var i = 0; i < cartRows.length; i++) {
+                var cartRow = cartRows[i];
+                var productName = cartRow.getElementsByClassName('cart-item')[0].innerText;
+                var productPrice = cartRow.getElementsByClassName('cart-price')[0].innerText.replace('$', '');
+                var quantity = cartRow.getElementsByClassName('cart-quantity')[0].value;
+                cartItems.push({ productName, productPrice, quantity });
+            }
 
-            cart.push(item);
-            alert(`${itemName} added to cart`);
-        });
-    });
+            try {
+                const response = await fetch('/create-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ items: cartItems })
+                });
 
-    function checkout() {
-        fetch('/create-order', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ cart })
-        }).then(res => res.json())
-        .then(data => {
-            window.location.href = data.approvalUrl;
-        }).catch(err => {
-            console.error('Error creating order:', err);
-        });
-    }
-
-    document.querySelector('.btn-purchase').addEventListener('click', checkout);
-
-    paypal.Buttons({
-        createOrder: function(data, actions) {
-            return fetch('/create-order', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ cart })
-            }).then(res => res.json())
-            .then(data => {
-                return data.id;
-            });
-        },
-        onApprove: function(data, actions) {
-            return fetch('/capture-order', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    orderID: data.orderID
-                })
-            }).then(res => res.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    window.location.href = '/thank-you';
+                const result = await response.json();
+                if (result.approvalUrl) {
+                    window.location.href = result.approvalUrl;
                 } else {
-                    console.error('Error capturing order:', data);
+                    alert('Error creating PayPal order');
                 }
-            }).catch(err => {
-                console.error('Error capturing order:', err);
-            });
+            } catch (error) {
+                console.error('Error during checkout:', error);
+                alert('There was an issue with the checkout process. Please try again later.');
+            }
         }
-    }).render('#paypal-button-container');
-</script>
+    </script>
 
-<div id="paypal-button-container"></div>
-  </body>
+    <!-- Store.js -->
+    <script src="store.js"></script>
+</body>
 </html>
